@@ -10,6 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 
 void	*memmove(void *dest, const void *src, size_t n	:)
+{
+    unsigned char *d = (unsigned char *)dest;
+    const unsigned char *s = (const unsigned char *)src;
 
+    if (d < s)
+    {
+        while (n > 0)
+        {
+            *d = *s;
+            d++;
+            s++;
+            n--;
+        }
+    }
+    else if (d > s)
+    {
+        d = d + n;
+        s = s + n;
+        while (n > 0)
+        {
+            d--;
+            s--;
+            *d = *s;
+            n--;
+        }
+    }
+    return dest;
+}
+
+int main(void)
+{
+    char str[] = "abcdef";
+
+    memmove(str + 2, str, 4)
+    printf("%s\n", str);
+    return (0)
+}
