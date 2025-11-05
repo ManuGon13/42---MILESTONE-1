@@ -6,7 +6,7 @@
 /*   By: egonin <egonin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 19:38:37 by egonin            #+#    #+#             */
-/*   Updated: 2025/09/25 17:09:41 by egonin           ###   ########.fr       */
+/*   Updated: 2025/11/05 18:55:30 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_atoi(char *str)
 	int	result;
 
 	i = 0;
-	sign = 0;
+	sign = 1;
 	result = 0;
 	while (ft_space(&str[i]) == 1)
 		i++;
