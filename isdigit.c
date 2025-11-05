@@ -12,11 +12,11 @@
 
 #include <stdio.h>
 
-int	isdigit(int	c)
+int	isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -25,14 +25,14 @@ int	main(int argc, char **argv)
 
 	i = 0;
 	if (argc != 2)
-		return 0;
+		return (0);
 	while (argv[1][i] != '\0')
-		{
-			if (isdigit (argv[1][i]))
-				printf("%c est un chiffre\n", argv[1][i]);
-			else
-				printf("%c n'est pas un chiffre\n", argv[1][i]);
-			i++;
-		}
+	{
+		if (isdigit (argv[1][i]))
+			printf("%c est un chiffre\n", argv[1][i]);
+		else
+			printf("%c n'est pas un chiffre\n", argv[1][i]);
+		i++;
+	}
 	return (0);
 }

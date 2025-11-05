@@ -12,20 +12,20 @@
 
 #include <stdio.h>
 
-int	isprint(int	c)
+int	isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-		return 1;
-	return 0;
-
+		return (1);
+	return (0);
 }
+
 int	main(void)
 {
-	int	i;
+	int		i;
+	char	str[];
 
-	char	str[] = {'A', ' ', '\n', '\t', 127, '!', 0};
+	str[] = {'A', ' ', '\n', '\t', 127, '!', 0};
 	i = 0;
-
 	while (str[i] != '\0')
 	{
 		if (isprint(str[i]))
@@ -35,4 +35,4 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}	
+}

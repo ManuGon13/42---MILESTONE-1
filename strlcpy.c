@@ -29,15 +29,17 @@ size_t	strlcpy(char *dst, const char *src, size_t size)
 	}
 	while (src[i])
 		i++;
-	return i;
+	return (i);
 }
 
 int	main(void)
 {
-	const char src[] = "Hello, world!";
-	char dst[] = "Couco";
-	size_t size = strlcpy(dst, src, sizeof (dst));
-	
+	const char	src[] = "Hello, world!";
+	char		dst[];
+	size_t		size;
+
+	dst[] = "Couco";
+	size = strlcpy(dst, src, sizeof (dst));
 	printf("dst: %s\n", dst);
 	printf("src length : %zu\n", size);
 	return (0);

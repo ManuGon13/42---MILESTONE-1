@@ -12,21 +12,21 @@
 
 #include <stdio.h>
 
-int	isalnum(int	c)
+int	isalnum(int c)
 {
 	if (((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		|| (c >= '0' && c <= '9'))
-		return 1;
-	return 0;
-
+		return (1);
+	return (0);
 }
-int	main(int argc, char ** argv)
+
+int	main(int argc, char **argv)
 {
 	int	i;
 
 	i = 0;
 	if (argc != 2)
-		return 0;
+		return (0);
 	while (argv[1][i] != '\0')
 	{
 		if (isalnum(argv[1][i]))
@@ -36,4 +36,4 @@ int	main(int argc, char ** argv)
 		i++;
 	}
 	return (0);
-}	
+}

@@ -12,11 +12,11 @@
 
 #include <stdio.h>
 
-int	isalpha(int	c)
+int	isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -25,14 +25,14 @@ int	main(int argc, char **argv)
 
 	i = 0;
 	if (argc != 2)
-		return 0;
+		return (0);
 	while (argv[1][i] != '\0')
-		{
-			if (isalpha(argv[1][i]))
-				printf("%c est une lettre\n", argv[1][i]);
-			else
-				printf("%c n'est pas une lettre\n", argv[1][i]);
-			i++;
-		}
+	{
+		if (isalpha(argv[1][i]))
+			printf("%c est une lettre\n", argv[1][i]);
+		else
+			printf("%c n'est pas une lettre\n", argv[1][i]);
+		i++;
+	}
 	return (0);
 }

@@ -14,21 +14,24 @@
 
 void	*memset(void *s, int c, size_t n)
 {
-	unsigned char	*p = (unsigned char *)s;
+	unsigned char	*p;
+
+	p = (unsigned char *)s;
 	while (n > 0)
 	{
 		*p = (unsigned char)c;
 		p++;
 		n--;
 	}
-	return	s;
+	return (s);
 }
+
 int	main(void)
 {
 	char	str[6];
 
 	memset(str, 'A', 5);
-	str[5]= '\0';
+	str[5] = '\0';
 	printf("%s\n", str);
-	return 0;
+	return (0);
 }

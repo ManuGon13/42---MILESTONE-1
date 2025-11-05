@@ -14,7 +14,7 @@
 
 char	*strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	*last;
 
 	i = 0;
@@ -26,20 +26,23 @@ char	*strrchr(const char *s, int c)
 		i++;
 	}
 	if ((char)c == '\0')
-		return (char *)&s[i];
+		return ((char *)&s[i]);
 	return (last);
 }
+
 int	main(int argc, char **argv)
 {
+	const char	*str = argv[1];
+	char		c;
+	char		*result;
+
+	c = argv[2][0];
+	*result = strrchr(str, c);
 	if (argc != 3)
 	{
 		printf("Il manque un argument");
 		return (0);
 	}
-	const char *str = argv[1];
-	char c = argv[2][0];
-	char *result = strrchr(str, c);
-
 	if (result)
 		printf("Caractere '%c' trouve a partir de: \"%s\"\n", c, result);
 	else

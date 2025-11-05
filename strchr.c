@@ -20,24 +20,28 @@ char	*strchr(const char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
-			return (char *)&s[i];
+			return ((char *)&s[i]);
 		i++;
 	}
 	if ((char)c == '\0')
-		return (char *)&s[i];
+		return ((char *)&s[i]);
 	return (NULL);
 }
+
 int	main(int argc, char **argv)
 {
+	const char	*str;
+	char		*c;
+	char		*result;
+
+	str = argv[1];
+	c = argv[2][0];
+	result = strchr(str, c);
 	if (argc != 3)
 	{
 		printf("Il manque un argument");
 		return (0);
 	}
-	const char *str = argv[1];
-	char c = argv[2][0];
-	char *result = strchr(str, c);
-
 	if (result)
 		printf("Caractere '%c' trouve a partir de: \"%s\"\n", c, result);
 	else

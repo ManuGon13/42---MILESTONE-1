@@ -22,27 +22,29 @@ size_t	strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	dlen = 0;
 	slen = 0;
-
 	while (dst[dlen] && dlen < size)
 		dlen++;
 	while (src[slen])
 		slen++;
 	if (dlen == size)
-		return size + slen;
+		return (size + slen);
 	while (src[i] && dlen + i < size - 1)
 	{
 		dst[dlen + i] = src[i];
 		i++;
 	}
 	dst[dlen + i] = '\0';
-	return dlen + slen;
+	return (dlen + slen);
 }
+
 int	main(void)
 {
-	const char src[] = " World";
-	char dst[] = "Hello";
-	size_t size = strlcat(dst, src, sizeof (src) + sizeof(dst));
+	const char	src[] = " World";
+	char		dst[];
+	size_t		size;
 
+	dst[] = "Hello";
+	size = strlcat(dst, src, sizeof (src) + sizeof(dst));
 	printf("dst: %s\n", dst);
 	printf("%zu\n", size);
 	return (0);
