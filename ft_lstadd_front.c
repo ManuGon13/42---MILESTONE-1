@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egonin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/08 12:02:57 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/08 15:55:54 by egonin           ###   ########.fr       */
+/*   Created: 2025/11/08 17:25:00 by egonin            #+#    #+#             */
+/*   Updated: 2025/11/08 17:40:57 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	unsigned int	i;
-
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
-}
-
-void	to_upper(unsigned int i, char *c)
-{
-	(void)i;
-	if (*c >= 'a' && *c <= 'z')
-		*c = *c - 32;
+	if (!lst || !new)
+		return;
+	new->next = *lst;
+	*lst = new;
 }
 
 int	main(void)
 {
-	char	str[] = "bonjour";
-	ft_striteri(str, to_upper);
-	printf("Majuscules: %s\n", str);
+	t_list	*lst;
+	t_list	*new;
+
+	lst = ft_lstnew("B");
+	new = ft_lstnew("A");
+
+	ft_lstadd_front(&lst, new);
+	printf("1er maillon : %s\n", (char *)lst->content);
+	printf("suivant : %s\n", (char *)lst->next->content);
 	return (0);
 }
