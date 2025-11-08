@@ -1,68 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egonin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 19:51:39 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/08 10:56:12 by egonin           ###   ########.fr       */
+/*   Created: 2025/11/08 11:04:11 by egonin            #+#    #+#             */
+/*   Updated: 2025/11/08 11:52:47 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  <stdlib.h>
-#include  <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-static int	ft_intlen(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	len;
+	char			*str;
+	unsigned int	i;
+	unsigned int	len;
 
-	if (n <= 0)
-		len = 1;
-	else
-		len = 0;
-	while (n != 0)
-	{
-		n /= 10;
+	if (!s || !f)
+		return (NULL);
+	len = 0;
+	while (s[len])
 		len++;
-	}
-	return (len);
-}
-
-char	*ft_itoa(int n)
-{
-	char	*str;
-	long	nb;
-	int		len;
-
-	nb = n;
-	len = ft_intlen(n);
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-	str[len] = '\0';
-	if (nb == 0)
-		str[0] = '0';
-	if (nb < 0)
+	i = 0;
+	while (i < len)
 	{
-		str[0] = '-';
-		nb = -nb;
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	while (nb > 0)
-	{
-		len = len - 1;
-		str[len] = (nb % 10) + '0';
-		nb = nb / 10;
-	}
+	str[i] = '\0';
 	return (str);
+}
+
+char	to_upper(unsigned int i, char c)
+{
+	(void)i;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
 
 int	main(void)
 {
-	char	*str;
+	char	*res;
 
-	str = ft_itoa(12345);
-	printf("ft_itoa(12345) = %s\n", str);
-	free(str);
+	res = ft_strmapi("bonjour", &to_upper);
+	printf("Majuscules: %s\n", res);
+	free(res);
 	return (0);
 }
