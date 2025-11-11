@@ -6,7 +6,7 @@
 /*   By: egonin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 16:02:15 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/10 10:32:46 by egonin           ###   ########.fr       */
+/*   Updated: 2025/11/11 11:46:00 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,4 @@ void	ft_putendl_fd(char *s, int fd)
 		i++;
 	}
 	write(fd, "\n", 1);
-}
-
-int	main(void)
-{
-	char	*s;
-
-	s = "Allez l'OM";
-	ft_putendl_fd(s, 1);
-	return (0);
 }

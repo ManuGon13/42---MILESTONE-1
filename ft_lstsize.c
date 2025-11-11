@@ -6,7 +6,7 @@
 /*   By: egonin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 17:50:36 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/10 10:35:00 by egonin           ###   ########.fr       */
+/*   Updated: 2025/11/11 11:48:30 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,4 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->next;
 	}
 	return (count);
-}
-
-int	main(void)
-{
-	t_list	*a;
-	t_list	*b;
-	t_list	*c;
-
-	a = ft_lstnew("A");
-	b = ft_lstnew("B");
-	c = ft_lstnew("C");
-	a->next = b;
-	b->next = c;
-	printf("taille de la liste : %d\n", ft_lstsize(a));
-	return (0);
 }

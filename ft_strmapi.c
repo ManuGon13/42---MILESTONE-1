@@ -6,7 +6,7 @@
 /*   By: egonin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 11:04:11 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/08 11:52:47 by egonin           ###   ########.fr       */
+/*   Updated: 2025/11/11 11:42:48 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,4 @@ char	to_upper(unsigned int i, char c)
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
-}
-
-int	main(void)
-{
-	char	*res;
-
-	res = ft_strmapi("bonjour", &to_upper);
-	printf("Majuscules: %s\n", res);
-	free(res);
-	return (0);
 }

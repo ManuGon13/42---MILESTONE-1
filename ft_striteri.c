@@ -6,7 +6,7 @@
 /*   By: egonin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 12:02:57 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/10 10:37:02 by egonin           ###   ########.fr       */
+/*   Updated: 2025/11/11 11:43:15 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,4 @@ void	to_upper(unsigned int i, char *c)
 	(void)i;
 	if (*c >= 'a' && *c <= 'z')
 		*c = *c - 32;
-}
-
-int	main(void)
-{
-	char	str[];
-
-	str = "bonjour";
-	ft_striteri(str, to_upper);
-	printf("Majuscules: %s\n", str);
-	return (0);
 }

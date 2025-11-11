@@ -6,7 +6,7 @@
 /*   By: egonin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 10:51:20 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/10 17:44:56 by egonin           ###   ########.fr       */
+/*   Updated: 2025/11/11 11:51:59 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,4 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 void	del(void *content)
 {
 	free(content);
-}
-
-int	main(void)
-{
-	t_list	*node;
-
-	node = malloc(sizeof(t_list));
-	if (!node)
-		return (1);
-	node->content = malloc(20 * sizeof(char));
-	if (!node->content)
-	{
-		free(node);
-		return (1);
-	}
-	node->next = NULL;
-	printf("avant suppr : node = %p, content = %p\n", node, node->content);
-	ft_lstdelone(node, del);
-	printf("apres suppr : maillon suppr \n");
-	return (0);
 }

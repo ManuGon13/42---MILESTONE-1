@@ -6,7 +6,7 @@
 /*   By: egonin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 14:18:35 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/07 17:41:12 by egonin           ###   ########.fr       */
+/*   Updated: 2025/11/11 11:38:54 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	dup[i] = '\0';
 	return (dup);
-}
-
-int	main(void)
-{
-	char	*src;
-	char	*dup;
-
-	src = "Bonjour";
-	dup = ft_substr(src, 3, 4);
-	printf("%s\n", dup);
-	free(dup);
-	return (0);
 }

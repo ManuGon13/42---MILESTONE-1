@@ -6,7 +6,7 @@
 /*   By: egonin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 19:51:39 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/08 10:56:12 by egonin           ###   ########.fr       */
+/*   Updated: 2025/11/11 11:41:38 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,4 @@ char	*ft_itoa(int n)
 		nb = nb / 10;
 	}
 	return (str);
-}
-
-int	main(void)
-{
-	char	*str;
-
-	str = ft_itoa(12345);
-	printf("ft_itoa(12345) = %s\n", str);
-	free(str);
-	return (0);
 }

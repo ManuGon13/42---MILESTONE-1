@@ -6,7 +6,7 @@
 /*   By: egonin <egonin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 19:48:41 by egonin            #+#    #+#             */
-/*   Updated: 2025/11/07 19:49:14 by egonin           ###   ########.fr       */
+/*   Updated: 2025/11/11 11:39:59 by egonin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,21 +86,4 @@ char	**ft_split(char const *str, char c)
 	}
 	tab[j] = NULL;
 	return (tab);
-}
-
-int	main(void)
-{
-	char		**result;
-	char const	*str;
-	int			i;
-
-	i = 0;
-	str = "Hello, 42, Paris";
-	result = ft_split(str, ',');
-	while (result[i])
-	{
-		printf("[%s]\n", result[i]);
-		i++;
-	}
-	return (0);
 }
